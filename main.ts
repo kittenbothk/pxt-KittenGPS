@@ -14,16 +14,18 @@ let SerialData='xxxxxxxx'
     basic.pause(100)
   }
 
-  //% blockId=gps_read block="GPS Get Data"
+  //% blockId=gps_read block="GPS Read Data"
   //% group="Basic" weight=95
   export function gps_read(){
-  let SerialData='xxxxxxxx'
+  SerialData='xxxxxxxx'
+  SerialData=serial.readString()
+  /*
     while (SerialData.length != 15){
         while (SerialData.substr(0,8) != "b'$GNGGA"){
         SerialData=serial.readString()
         }
     }
-
+    */
   }
 
   //% blockId=gps_get block="GPS Get Data"
