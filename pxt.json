@@ -1,6 +1,6 @@
 {
     "name": "pxt-KittenGPS",
-    "description": "",
+    "description": "KittenBot HK GPS Module",
     "dependencies": {
         "core": "*",
         "radio": "*",
