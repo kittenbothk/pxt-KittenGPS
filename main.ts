@@ -28,7 +28,7 @@ let SerialData='xxxxxxxx'
 
   //% blockId=gps_get block="GPS Get Data"
   //% group="Basic" weight=90
-  export function gps_read(): string{
+  export function gps_get(): string{
     return SerialData
   }
 
