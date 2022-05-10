@@ -10,7 +10,7 @@ let SerialData='xxxxxxxx'
   //% blockId=gps_init block="GPS init|Tx(Blue) pin %tx|Rx(Green) pin %rx"
   //% group="Basic" weight=100
   export function gps_init(tx: SerialPin, rx: SerialPin): void {
-    serial.redirect(tx, rx, BaudRate.BaudRate115200)
+    serial.redirect(tx, rx, BaudRate.BaudRate9600)
     basic.pause(100)
   }
 
