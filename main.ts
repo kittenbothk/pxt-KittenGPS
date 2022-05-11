@@ -2,7 +2,7 @@
 
 namespace KittenGPS{
 let SerialData='xxxxxxxx'
-let serialBuf=[]
+let serialBuf: string[] = []
 let UTC=""
 let longitude=""
 let latitude=""
@@ -43,15 +43,18 @@ let latitude=""
     return SerialData
   }
 
-  //% blockId=gps_utch block="GPS get UTC Time %timeindex"
+  //% blockId=gps_utc block="GPS get UTC Time %timeindex"
   //% group="Basic" weight=85
-  export function gps_utch(i:timeindex): number{
+  export function gps_utc(timeindex:number): number{
+  if (UTC!=''){
   let time=[]
   time[0]=parseFloat(UTC.substr(0,2))
   time[0]=time[0]+8
   time[1]=parseFloat(UTC.substr(2,2))
   time[2]=parseFloat(UTC.substr(4,2))
-  return time[i]
+  return time[timeindex]
+  }
+  else return 0
   }
 
 
