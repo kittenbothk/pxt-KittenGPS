@@ -31,13 +31,14 @@ sec=2,
   export function gps_read(){
   SerialData='xxxxxxxx'
   //SerialData=serial.readString()
+  serialBuf: string[] = []
   while (!SerialData.includes("GNGGA")){
     SerialData=serial.readLine()
     //SerialData="$GNGGA,130651.000,2234.88821,N,11352.29253,E,1,21,0.9,17.8,M,-3.8,M,,*67"
     serialBuf=SerialData.split(",")
     basic.pause(100)
   }
-  if (serialBuf.length>4){
+  if (serialBuf.length>=4){
   UTC=serialBuf[1]
   latitude=serialBuf[2]
   longitude=serialBuf[4]
