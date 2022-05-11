@@ -18,14 +18,14 @@ let SerialData='xxxxxxxx'
   //% group="Basic" weight=95
   export function gps_read(){
   SerialData='xxxxxxxx'
-  SerialData=serial.readString()
-  /*
+  //SerialData=serial.readString()
+
     while (SerialData.length != 15){
         while (SerialData.substr(0,8) != "b'$GNGGA"){
         SerialData=serial.readString()
         }
     }
-    */
+    
   }
 
   //% blockId=gps_get block="GPS Get Data"
