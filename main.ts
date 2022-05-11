@@ -6,6 +6,14 @@ let serialBuf: string[] = []
 let UTC=""
 let longitude=""
 let latitude=""
+export enum timeindex{
+//% block="Hour"
+hour=0,
+//% block="Minute"
+min=1,
+//% block="Second"
+sec=2,
+}
 /**
    * init serial port
    * @param tx Tx pin; eg: SerialPin.P1
@@ -43,16 +51,16 @@ let latitude=""
     return SerialData
   }
 
-  //% blockId=gps_utc block="GPS get UTC Time %timeindex"
+  //% blockId=gps_utc block="GPS get UTC Time %i"
   //% group="Basic" weight=85
-  export function gps_utc(timeindex:number): number{
+  export function gps_utc(i:timeindex): number{
   if (UTC!=''){
   let time=[]
   time[0]=parseFloat(UTC.substr(0,2))
   time[0]=time[0]+8
   time[1]=parseFloat(UTC.substr(2,2))
   time[2]=parseFloat(UTC.substr(4,2))
-  return time[timeindex]
+  return time[i]
   }
   else return 0
   }
