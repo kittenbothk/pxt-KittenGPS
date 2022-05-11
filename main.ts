@@ -65,6 +65,14 @@ sec=2,
   else return 0
   }
 
-
+  //% blockID=gps_latitude block="GPS Get Latitude"
+  //% group="Basic" weight=80
+  export function gps_latitude():number{
+  let latfinal = -1
+  if (latitude!=''){
+  latfinal=parseFloat(latitude.substr(0,2))+(parseFloat(latitude.substr(2,latitude.length)))/60
+  }
+  return latfinal
+  }
 }
 
