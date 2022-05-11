@@ -19,13 +19,9 @@ let SerialData='xxxxxxxx'
   export function gps_read(){
   SerialData='xxxxxxxx'
   //SerialData=serial.readString()
-
-    while (SerialData.length != 15){
-        while (SerialData.substr(0,8) != "b'$GNGGA"){
-        SerialData=serial.readString()
-        }
-    }
-    
+  while (!SerialData.includes("GNGGA")){
+    SerialData=serial.readString()
+  }
   }
 
   //% blockId=gps_get block="GPS Get Data"
@@ -35,3 +31,4 @@ let SerialData='xxxxxxxx'
   }
 
 }
+
