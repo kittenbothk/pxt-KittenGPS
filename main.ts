@@ -72,7 +72,18 @@ sec=2,
   if (latitude!=''){
   latfinal=parseFloat(latitude.substr(0,2))+(parseFloat(latitude.substr(2,latitude.length)))/60
   }
+  // 22.5814701666667
   return latfinal
+  }
+
+  //% blockID=gps_longitude block="GPS Get Longitude"
+  //% group="Basic" weight=75
+  export function gps_longitude():number{
+  let lonfinal = -1
+  if (longitude!=''){
+  lonfinal=parseFloat(longitude.substr(0,3))+(parseFloat(longitude.substr(3,longitude.length)))/60
+  }
+  return lonfinal
   }
 }
 
