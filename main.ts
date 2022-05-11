@@ -33,7 +33,7 @@ sec=2,
   //SerialData=serial.readString()
   while (!SerialData.includes("GNGGA")){
     SerialData=serial.readLine()
-    SerialData="$GNGGA,130651.000,2234.88821,N,11352.29253,E,1,21,0.9,17.8,M,-3.8,M,,*67"
+    //SerialData="$GNGGA,130651.000,2234.88821,N,11352.29253,E,1,21,0.9,17.8,M,-3.8,M,,*67"
     serialBuf=SerialData.split(",")
     basic.pause(100)
   }
