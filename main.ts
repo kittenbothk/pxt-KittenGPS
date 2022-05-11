@@ -21,6 +21,7 @@ let SerialData='xxxxxxxx'
   //SerialData=serial.readString()
   while (!SerialData.includes("GNGGA")){
     SerialData=serial.readString()
+    basic.pause(100)
   }
   }
 
