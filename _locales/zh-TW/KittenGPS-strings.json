@@ -1,3 +1,7 @@
 {
-  "KittenGPS.gps_init|block": "初始化GPS模組|Tx(藍色) %tx|Rx(綠色) %rx"
+  "KittenGPS.gps_init|block": "初始化GPS模組|Tx(藍色) %tx|Rx(綠色) %rx",
+  "KittenGPS.gps_read|block": "GPS模組獲取數據",
+  "KittenGPS.gps_utc|block": "GPS獲取時間",
+  "KittenGPS.gps_latitude|block": "GPS獲取經度",
+  "KittenGPS.gps_longitude|block": "GPS獲取緯度"
 }
