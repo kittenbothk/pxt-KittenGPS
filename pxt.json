@@ -11,7 +11,7 @@
         "main.blocks",
         "main.ts",
         "README.md",
-        "_locales/zh-TW/KittenGPS-stings.json"
+        "_locales/zh-TW/KittenGPS-strings.json"
     ],
     "testFiles": [
         "test.ts"
