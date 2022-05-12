@@ -95,6 +95,7 @@ sec=2,
   let latfinal = -1
   if (latitude!=''){
   latfinal=parseFloat(latitude.substr(0,2))+(parseFloat(latitude.substr(2,latitude.length)))/60
+  latfinal= parseFloat((convertToText(latfinal).substr(0,8)))
   }
   // 22.5814701666667
   return latfinal
@@ -106,6 +107,7 @@ sec=2,
   let lonfinal = -1
   if (longitude!=''){
   lonfinal=parseFloat(longitude.substr(0,3))+(parseFloat(longitude.substr(3,longitude.length)))/60
+  lonfinal= parseFloat((convertToText(lonfinal).substr(0,8)))
   }
   return lonfinal
   }
