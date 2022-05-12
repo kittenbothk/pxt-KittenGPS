@@ -1,7 +1,8 @@
 //% color="#32a852" weight=10 icon="\uf130"
 
 namespace KittenGPS{
-let SerialData='xxxxxxxx'
+let SerialData: Buffer = null
+let SerialString=""
 let serialBuf: string[] = []
 let UTC=""
 let longitude=""
@@ -23,12 +24,34 @@ sec=2,
   //% group="Basic" weight=100
   export function gps_init(tx: SerialPin, rx: SerialPin): void {
     serial.redirect(tx, rx, BaudRate.BaudRate9600)
+    serial.setRxBufferSize(72)
     basic.pause(100)
   }
 
   //% blockId=gps_read block="GPS Read Data"
   //% group="Basic" weight=95
   export function gps_read(){
+  SerialString=''
+  while (!SerialString.includes("GNGGA")){
+    SerialData=serial.readBuffer(72)
+    for (let i =0; i<=SerialData.length;i++){
+      let temp = String.fromCharCode(SerialData[i])
+      SerialString = SerialString + temp
+    }
+    basic.pause(100)
+  }
+  if (SerialString.includes("GNGGA")){
+    serialBuf=SerialString.split(",")
+  } else {
+    serialBuf=[]
+  }
+
+  if (serialBuf.length>=4){
+    UTC=serialBuf[1]
+    latitude=serialBuf[2]
+    longitude=serialBuf[4]
+  }
+  /*
   SerialData='xxxxxxxx'
   //SerialData=serial.readString()
   serialBuf = []
@@ -36,14 +59,14 @@ sec=2,
     SerialData=serial.readLine()
     //SerialData="$GNGGA,130651.000,2234.88821,N,11352.29253,E,1,21,0.9,17.8,M,-3.8,M,,*67"
     serialBuf=SerialData.split(",")
-    basic.pause(500)
+    basic.pause(100)
   }
   if (serialBuf.length>=4){
   UTC=serialBuf[1]
   latitude=serialBuf[2]
   longitude=serialBuf[4]
   }
-
+  */
   }
 
   //% blockId=gps_get block="GPS Get Data"
