@@ -69,12 +69,6 @@ sec=2,
   */
   }
 
-  //% blockId=gps_get block="GPS Get Data"
-  //% group="Basic" weight=90
-  export function gps_get(): string{
-    return "testing"
-  }
-
   //% blockId=gps_utc block="GPS get UTC Time %i"
   //% group="Basic" weight=85
   export function gps_utc(i:timeindex): number{
