@@ -72,7 +72,7 @@ sec=2,
   //% blockId=gps_get block="GPS Get Data"
   //% group="Basic" weight=90
   export function gps_get(): string{
-    return SerialData
+    return "testing"
   }
 
   //% blockId=gps_utc block="GPS get UTC Time %i"
