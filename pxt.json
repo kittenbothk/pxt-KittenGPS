@@ -1,5 +1,5 @@
 {
-    "name": "pxt-KittenGPS",
+    "name": "KittenGPS",
     "description": "KittenBot HK GPS Module",
     "version":"0.0.1",
     "dependencies": {
